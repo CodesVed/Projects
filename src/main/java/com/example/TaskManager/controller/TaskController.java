@@ -21,22 +21,31 @@ public class TaskController {
 
     @PostMapping("/tasks")
     public ResponseEntity<Task> createTask(@RequestBody Task task){
-        return new ResponseEntity<>(service.createTask(task), HttpStatus.CREATED);
+        Task task1 = service.createTask(task);
+        return new ResponseEntity<>(task1, HttpStatus.CREATED);
     }
 
     @GetMapping("/tasks")
     public ResponseEntity<List<Task>> getAllTasks(){
-        return new ResponseEntity<>(service.getAllTasks(), HttpStatus.OK);
+        List<Task> tasks = service.getAllTasks();
+        return new ResponseEntity<>(tasks, HttpStatus.OK);
     }
 
     @PutMapping("/tasks/{id}")
-    public ResponseEntity<Task> updateTask(@PathVariable long id,@RequestBody Task task){
-        return new ResponseEntity<>(service.updateTask(id, task), HttpStatus.OK);
+    public ResponseEntity<Task> updateTask(@PathVariable long id,@RequestBody Task updatedtask){
+        Task task1 = service.updateTask(id, updatedtask);
+        return new ResponseEntity<>(task1, HttpStatus.OK);
     }
 
-    @DeleteMapping("/tasks/{id}")
+    @DeleteMapping("tasks/{id}")
     public ResponseEntity<String> deleteTask(@PathVariable long id){
         service.deleteTask(id);
         return new ResponseEntity<>("Task Successfully Deleted.", HttpStatus.NO_CONTENT);
+    }
+
+    @GetMapping("/tasks/completed")
+    public ResponseEntity<List<Task>> findByCompleted(@RequestParam boolean completed){
+        List<Task> tasks = service.findByCompleted(completed);
+        return new ResponseEntity<>(tasks, HttpStatus.OK);
     }
 }
