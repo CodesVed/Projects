@@ -21,14 +21,28 @@ public class CalculatorUI_Main {
 
             switch (choice) {
                 case 1:
-                    int size = Methods.getValidInput("\nEnter total no. to be added: ", sc);
-                    if (size == -1){
+                    try {
+                        Calculation.addition();
+                    } catch (InterruptedException e) {
+                        throw new RuntimeException(e);
+                    }
+                    break;
+                case 2:
+                    try {
+                        System.out.print("\nEnter first number: ");
+                        double a = sc.nextDouble();
+                        System.out.print("Enter second number: ");
+                        double b = sc.nextDouble();
+                        Calculation.subtract(a,b);
+                        break;
+                    } catch (Exception e){
+                        System.out.println("Failed Operation!");
+                        sc.next();
                         break;
                     }
-                    Calculation.addition(size);
-                    break;
+
                 case 5:
-                    System.out.println("\nThank You for using our application.\nHave a Good Day :)");
+                    System.out.println("\nThank You for using our calculator.\nHave a Good Day :)");
                     break;
             }
         } while (choice != 5);

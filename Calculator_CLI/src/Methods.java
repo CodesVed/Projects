@@ -20,22 +20,29 @@ public class Methods {
 
     // method make an array of numbers
     public static double[] inputArray(int n){
-        double[] nums = new double[n];
+        double[] arr = new double[n];
+
         sc.useDelimiter("\\D");
 
-        if (n <= 1){
-            System.out.println("Invalid Operation.");
-        } else {
-            try {
-                System.out.print("Enter desired numbers for calculation: ");
-                for (int i = 0; i < n; i++) {
-                    nums[i] = sc.nextDouble();
-                }
-            } catch (InputMismatchException ime) {
-                System.out.println("error: only numerical inputs are allowed.");
-                sc.next();
-            }
+        System.out.print("Enter numbers for calculation: ");
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextDouble();
         }
-        return nums;
+
+        return arr;
     }
+
+    public static void animatedDots(String s) throws InterruptedException {
+        System.out.print(s);
+        System.out.flush();
+
+        for (int i = 0; i < 3; i++) {
+            Thread.sleep(500);         // wait 200 milliseconds
+            System.out.print(".");     // print a dot
+            System.out.flush();        // flush to show immediately
+        }
+
+        System.out.println(); // move to next line after all dots
+    }
+
 }
