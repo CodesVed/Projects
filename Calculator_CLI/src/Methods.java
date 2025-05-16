@@ -4,7 +4,6 @@ import java.util.Scanner;
 public class Methods {
     private static final Scanner sc = new Scanner(System.in);
 
-    // incorrect input exception handler
     public static int getValidInput(String prompt, Scanner sc){
         int input;
         try {
@@ -18,31 +17,43 @@ public class Methods {
         }
     }
 
-    // method make an array of numbers
     public static double[] inputArray(int n){
         double[] arr = new double[n];
 
         sc.useDelimiter("\\D");
 
-        System.out.print("Enter numbers for calculation: ");
-        for (int i = 0; i < n; i++) {
-            arr[i] = sc.nextDouble();
+        try {
+            System.out.print("Enter numbers for calculation: ");
+            for (int i = 0; i < n; i++) {
+                arr[i] = sc.nextDouble();
+            }
+        } catch (Exception e){
+            System.out.println("Error!");
         }
 
         return arr;
     }
 
-    public static void animatedDots(String s) throws InterruptedException {
+    public static void pause(int millis){
+        try {
+            Thread.sleep(millis);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+            System.out.println("error: process interrupted!");
+        }
+    }
+
+    public static void animatedDots(String s){
         System.out.print(s);
         System.out.flush();
 
         for (int i = 0; i < 3; i++) {
-            Thread.sleep(500);         // wait 200 milliseconds
-            System.out.print(".");     // print a dot
+            pause(500);
+            System.out.print(".");
             System.out.flush();        // flush to show immediately
         }
 
-        System.out.println(); // move to next line after all dots
+        System.out.println();
     }
 
 }
