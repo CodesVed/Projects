@@ -1,3 +1,5 @@
+import java.lang.reflect.Method;
+import java.math.BigInteger;
 import java.util.Scanner;
 
 public class Calculation {
@@ -17,6 +19,8 @@ public class Calculation {
 
         System.out.printf("Result: %.2f%n", sum);
         Thread.sleep(500);
+
+        sc.close();
     }
 
     public static void subtract(double a, double b){
@@ -38,5 +42,33 @@ public class Calculation {
         Methods.animatedDots("\nDividing");
         System.out.printf("Result: %.2f%n", result);
         Methods.pause(500);
+    }
+
+    public static void exponent(double base, double power){
+        double result = 1;
+
+        Methods.animatedDots("\nCalculating");
+        for (int i=0; i<power; i++){
+            result *= base;
+        }
+
+        System.out.printf("%.2f raised to the power %.2f is: %.2f%n", base,power,result);
+        Methods.pause(500);
+    }
+
+    public static void percentOf(double percent, double value){
+        Methods.animatedDots("\nCalculating");
+        double result = (percent/100)*value;
+
+        System.out.printf("%.2f%% of %.2f is %.2f%n", percent,value,result);
+        Methods.pause(500);
+    }
+
+    public static BigInteger factorial(int n){
+        if (n==0){
+            return BigInteger.ONE;
+        }
+
+        return BigInteger.valueOf(n).multiply(factorial(n-1));
     }
 }

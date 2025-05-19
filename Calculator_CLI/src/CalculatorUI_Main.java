@@ -1,3 +1,4 @@
+import java.math.BigInteger;
 import java.util.Scanner;
 
 public class CalculatorUI_Main {
@@ -9,11 +10,11 @@ public class CalculatorUI_Main {
         do{
             System.out.println("""
                     \nAvailable Functions:
-                    1. Addition
-                    2. Subtraction
-                    3. Multiplication
-                    4. Division
-                    5. Exit""");
+                    1. Addition         2. Subtraction
+                    3. Multiplication   4. Division
+                    5. Exponent         6. Percent Of #
+                    7. Factorial
+                    0. Exit""");
 
             choice = Methods.getValidInput("\nChoose an option: ", sc);
 
@@ -69,9 +70,51 @@ public class CalculatorUI_Main {
                     break;
 
                 case 5:
+                    try {
+                        System.out.print("\nEnter base: ");
+                        double base = sc.nextDouble();
+                        System.out.print("Enter power: ");
+                        double power = sc.nextDouble();
+                        Calculation.exponent(base,power);
+                        break;
+                    } catch (Exception e){
+                        System.out.println("Failed Operation!");
+                        sc.next();
+                    }
+                    break;
+
+                case 6:
+                    try {
+                        System.out.print("\nEnter percentage: ");
+                        double percent = sc.nextDouble();
+                        System.out.print("Enter value: ");
+                        double value = sc.nextDouble();
+                        Calculation.percentOf(percent,value);
+                        break;
+                    } catch (Exception e){
+                        System.out.println("Failed Operation!");
+                        sc.next();
+                    }
+                    break;
+
+                case 7:
+                    try{
+                        System.out.print("\nEnter number: ");
+                        int n = sc.nextInt();
+                        Methods.animatedDots("\nCalculating");
+                        BigInteger result = Calculation.factorial(n);
+                        System.out.println("Factorial of " + n + " is: " + result);
+                        break;
+                    } catch (Exception e){
+                        System.out.println("Failed Operation!");
+                        sc.next();
+                    }
+                    break;
+
+                case 0:
                     System.out.println("\nThank You for using our calculator.\nHave a Good Day :)");
                     break;
             }
-        } while (choice != 5);
+        } while (choice != 0);
     }
 }

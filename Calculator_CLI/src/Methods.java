@@ -50,10 +50,9 @@ public class Methods {
         for (int i = 0; i < 3; i++) {
             pause(500);
             System.out.print(".");
-            System.out.flush();        // flush to show immediately
+            System.out.flush();
         }
 
         System.out.println();
     }
-
 }
