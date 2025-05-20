@@ -4,6 +4,10 @@ out/
 !**/src/main/**/out/
 !**/src/test/**/out/
 Calculator_CLI.iml
+runtime/
+manifest.txt
+JustCalculator.jar
+JustCalculator.bat
 
 ### Eclipse ###
 .apt_generated
