@@ -3,6 +3,7 @@ package com.example.Calculator_API.controller;
 import com.example.Calculator_API.dto.CalculatorRequest;
 import com.example.Calculator_API.dto.CalculatorResponse;
 import com.example.Calculator_API.dto.InterestRequest;
+import com.example.Calculator_API.dto.SingleIntegerRequest;
 import com.example.Calculator_API.service.CalculatorService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -63,6 +64,30 @@ public class CalculatorController {
     @PostMapping("interest/compound")
     public ResponseEntity<CalculatorResponse> compInterest(@RequestBody InterestRequest request){
         int result = service.compInterest(request.getP(), request.getR(), request.getN(), request.getT());
+        return new ResponseEntity<>(new CalculatorResponse(result), HttpStatus.OK);
+    }
+
+    @GetMapping("/factorial/{number}")
+    public ResponseEntity<CalculatorResponse> factorial(@PathVariable SingleIntegerRequest request){
+        int result = service.factorial(request.getA());
+        return new ResponseEntity<>(new CalculatorResponse(result), HttpStatus.OK);
+    }
+
+    @GetMapping("/sqrt/{number}")
+    public ResponseEntity<CalculatorResponse> sqrt(@PathVariable SingleIntegerRequest request){
+        double result = service.sqrt(request.getA());
+        return new ResponseEntity<>(new CalculatorResponse(result), HttpStatus.OK);
+    }
+
+    @GetMapping("/log/natural")
+    public ResponseEntity<CalculatorResponse> naturalLog(@RequestBody SingleIntegerRequest request){
+        double result = service.naturalLog(request.getA());
+        return new ResponseEntity<>(new CalculatorResponse(result), HttpStatus.OK);
+    }
+
+    @GetMapping("/log/10")
+    public ResponseEntity<CalculatorResponse> baseTenLog(@RequestBody SingleIntegerRequest request){
+        double result = service.baseTenLog(request.getA());
         return new ResponseEntity<>(new CalculatorResponse(result), HttpStatus.OK);
     }
 }

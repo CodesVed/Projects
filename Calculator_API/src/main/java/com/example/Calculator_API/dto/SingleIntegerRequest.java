@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class CalculatorRequest {
-    private double a;
-    private double b;
+public class SingleIntegerRequest {
+    private int a;
 }

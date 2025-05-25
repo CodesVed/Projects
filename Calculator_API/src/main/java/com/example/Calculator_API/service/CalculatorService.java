@@ -47,4 +47,24 @@ public class CalculatorService {
 
         return (int) (p + Math.pow((1+((double) r /n)),(n*t)));
     }
+
+    public int factorial(int number) {
+        if (number == 0 || number == 1){
+            return 1;
+        }
+
+        return number * factorial(number-1);
+    }
+
+    public double sqrt(int number) {
+        return Math.sqrt(number);
+    }
+
+    public double naturalLog(int a) {
+        return Math.log(a);
+    }
+
+    public double baseTenLog(int a) {
+        return Math.log10(a);
+    }
 }
