@@ -1,4 +1,4 @@
-# 🧑‍💻 My Java Projects Portfolio
+# 🧑‍💻 Projects Portfolio
 
 Welcome! This repository contains my Java projects organized in folders. Each folder has its own detailed README.
 
