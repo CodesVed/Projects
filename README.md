@@ -24,5 +24,5 @@ The thought of learning new in how the softwares backend works, motivates me.
 
 ## Contact
 
--[Email](ved04.dev@gmail.com)  
--[LinkedIn](https://www.linkedin.com/in/vedant-jain-3b0115334/)
+Email: ved04.dev@gmail.com 
+[LinkedIn](https://www.linkedin.com/in/vedant-jain-3b0115334/)
