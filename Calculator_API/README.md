@@ -19,7 +19,7 @@
 As such no major challanges were faced.
 
 📚 **Learnings**
-- Separate DTOs layer
+- Separate DTO layer
 - Relevant use of Http methods and concept of state change
 
 🔗 **Related Links**
