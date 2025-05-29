@@ -20,4 +20,4 @@
 - Improved method decomposition
 
 🔗 **Related Links**
-- Project Deep Dive: https://journal-code.blogspot.com/2024/06/todo-list-app.html
+- [Project Deep Dive](https://journal-code.blogspot.com/2024/06/todo-list-app.html)
