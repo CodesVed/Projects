@@ -22,6 +22,3 @@
 - Clean and simplified codebase
 - Handling Thread class' sleep method exception
 - Color coding for UI
-
-🔗 **Related Links**
-- Project Deep Dive: 
